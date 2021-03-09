@@ -4,4 +4,12 @@ A cypress automation that would fill in the [fieldglass](https://www.fieldglass.
 
 ## Usage
 
-The test params coming from the [fieldglass config](./cypress/fixtures/fieldglass_config.json) file.
+The script params coming from the [fieldglass config](./cypress/fixtures/fieldglass_config.json) file.
+
+### From source code
+
+```
+ "creds": {
+        "username": "",
+        "password": ""
+    },
