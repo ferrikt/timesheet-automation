@@ -1,0 +1,21 @@
+{
+  "name": "ytdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cypress open",
+    "fieldglass": "cypress run --spec 'cypress/integration/examples/fieldglass.js' --browser chrome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^7.1.1",
+    "mochawesome": "^5.0.0"
+  },
+  "dependencies": {
+    "cypress": "^3.3.1"
+  }
+}
