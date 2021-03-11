@@ -1,5 +1,6 @@
 import {  startOfWeek, getDate,  getMonth, getYear, add} from 'date-fns'
 
+
 describe('Timesheet filling against fieldglass', () => {
     let config;
     beforeEach(() => {
@@ -9,15 +10,15 @@ describe('Timesheet filling against fieldglass', () => {
             return true;
           }
         })
-      });
 
-    before((done) => {
         const configFile = process.env.CFG_FILE || "fieldglass_config.json";
         cy.fixture(configFile).then((cfg) => {
             config = cfg;
-            done();
+          
         });
-    })
+      });
+
+  
     
     it('goes to fieldglass website', () => {
         cy.visit(config.url);
@@ -56,8 +57,7 @@ describe('Timesheet filling against fieldglass', () => {
         }
      
         const classNames = getClassNames();
-        
-        //TO DO: should clean inputs be4 putting any value
+       
         classNames.forEach(className=>cy.get('#timeSheetMainTable')
         .find(`.${className}`)
         .first()
@@ -67,14 +67,19 @@ describe('Timesheet filling against fieldglass', () => {
         cy.get("th.captionBig").contains("Day").first().click();
 
     })
-    
-    it("clicks on `Save Draft` button", () => {
+
+    it("clicks on `Submit` button", () => {
         cy.get('#commentsz2103080136591235600382d')
         .clear() 
-        .type('no comment');
+        .type('5 days working week');
 
-        cy.get('.formButton').click();
-        
-        cy.wait(10000)
+        cy.get('#fgTSSubmit').click();
+
+        // cy.wait(300);
+        // cy.screenshot();
+
+        cy.get('#update').click();
+        // cy.wait(300);
+        // cy.screenshot();
     })
 })
