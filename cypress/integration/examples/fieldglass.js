@@ -58,13 +58,21 @@ describe('Timesheet filling against fieldglass', () => {
         const classNames = getClassNames();
         
         //TO DO: should clean inputs be4 putting any value
-        classNames.forEach(className=>cy.get('#timeSheetMainTable').find(`.${className}`).first().type(config.timesheet.hours));
+        classNames.forEach(className=>cy.get('#timeSheetMainTable')
+        .find(`.${className}`)
+        .first()
+        .clear() 
+        .type(config.timesheet.hours));
 
         cy.get("th.captionBig").contains("Day").first().click();
 
     })
+    
     it("clicks on `Save Draft` button", () => {
-        cy.get('#commentsz2103080136591235600382d').type('no comment');
+        cy.get('#commentsz2103080136591235600382d')
+        .clear() 
+        .type('no comment');
+
         cy.get('.formButton').click();
         
         cy.wait(10000)
