@@ -69,9 +69,9 @@ describe('Timesheet filling against fieldglass', () => {
     })
 
     it("clicks on `Submit` button", () => {
-        cy.get('#commentsz2103080136591235600382d')
-        .clear() 
-        .type('5 days working week');
+        // cy.get('#commentsz2103080136591235600382d')
+        // .clear() 
+        // .type('5 days working week');
 
         cy.get('#fgTSSubmit').click();
 
