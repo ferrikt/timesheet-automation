@@ -9,7 +9,7 @@ The script params coming from the [fieldglass config](./cypress/fixtures/fieldgl
 ### From source code
 
 ```
-# Use your values
+# Use your  values
  "creds": {
         "username": "",
         "password": ""
