@@ -16,7 +16,7 @@
     "mochawesome": "^5.0.0"
   },
   "dependencies": {
-    "cypress": "^3.3.1",
+    "cypress": "^3.8.3",
     "date-fns": "^2.19.0"
   }
 }
